@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments-Start Trading: Explore Live NSE/BSE on MarketMinds</title>
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 20px 0;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+/* Style for Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, button {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+/* Style for tab panel */
+    .tab-panel {
+      display: flex;
+      gap: 10px;
+    }
+
+    .tab {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #eee;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #ddd;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content[tabindex="0"] {
+      display: block;
+    }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip To Main Content </a>
+<header>
+    <div class="logo-container">
+<p><i>Market Minds</i></p>
+    </div>
+</header>
+
+<nav>
+<ul>
+<li><a href="Index.html">Home</a></li>
+<li><a href="Investments.html" aria-current="page">Investments</a></li>
+<li><a href="Investments.html#trade" aria-current="page">Start Trading </a></li>
+<li>    <a href="Login_SignUp.html#main">Login</a></li>
+<li><p>Don't have an Account!</p></li>
+<li>    <a href="Login_SignUp.html#main">Create Account</a></li>
+</ul>
+</nav>
+
+<main>
+<h1 id="main">Your Investments-Trading </h1>
+<section>
+<h2 id="zomato">Zomato Stock</h2>
+<!-- Content for Zomato Stock section -->
+<p><strong>Current Price:</strong> ₹XXXXX</p>
+                <p><strong>Today's Low:</strong> ₹XXXXX</p>
+                <p><strong>Today's High:</strong> ₹XXXXX</p>
+    </section>
+
+<hr>
+    <section>
+        <h2 id="idfc">IDFC First Bank Stock</h2>
+        <!-- Content for IDFC Stock section -->
+                <p><strong>Current Price:</strong> ₹XXXXX</p>
+                <p><strong>Today's Low:</strong> ₹XXXXX</p>
+                <p><strong>Today's High:</strong> ₹XXXXX</p>
+        </section>
+
+<hr>
+    <section>
+        <h2 id="indian hotel">Indian Hotel Stock</h2>
+        <!-- Content for Indian Hotel Stock section -->
+                <p><strong>Current Price:</strong> ₹XXXXX</p>
+                <p><strong>Today's Low:</strong> ₹XXXXX</p>
+                <p><strong>Today's High:</strong> ₹XXXXX</p>
+    </section>
+
+<hr>
+<h2 id="trade">Start Trading</h2>
+<div class="tab-panel" role="tablist" aria-label="Tab Panel">
+  <div class="tab" role="tab" aria-selected="true" tabindex="0" onclick="changeTab(0)">Buy Stocks 
+</div>
+  <div class="tab" role="tab" aria-selected="false" tabindex="-1" onclick="changeTab(1)">Sell Stocks </div>
+</div>
+
+<div class="tab-content" role="tabpanel" aria-labelledby="tab1" id="content1" tabindex="0">
+<!-- Content for Buy Stocks tab  -->
+<form action="process_purchase.php" method="post">
+      <label for="trade-type">Select Trade Type:</label>
+      <select id="trade-type" name="trade-type">
+        <option value="intraday">Intraday</option>
+        <option value="delivery">Delivery</option>
+      </select>
+
+    <label id="stockSymbolLabel" for="stockSymbol">Stock Symbol:</label>
+    <input type="text" id="stockSymbol" name="stockSymbol" required aria-labelledby="stockSymbolLabel">
+
+    <label id="quantityLabel" for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" required aria-labelledby="quantityLabel">
+
+    <label id="priceLabel" for="price">Price per Share:</label>
+    <input type="text" id="price" name="price" required aria-labelledby="priceLabel">
+
+    <label id="totalLabel" for="total">Total Amount:</label>
+    <input type="text" id="total" name="total" readonly aria-labelledby="totalLabel">
+
+    <button type="submit">Buy Stocks</button>
+</form>
+
+    <script>
+        // Here Script to calculate the total amount based on quantity and price
+        document.getElementById('quantity').addEventListener('input', updateTotal);
+        document.getElementById('price').addEventListener('input', updateTotal);
+
+        function updateTotal() {
+            var quantity = document.getElementById('quantity').value;
+            var price = document.getElementById('price').value;
+            var total = quantity * price;
+
+            document.getElementById('total').value = total.toFixed(2);
+        }
+    </script>
+
+</div>
+
+<div class="tab-content" role="tabpanel" aria-labelledby="tab2" id="content2" hidden>
+<!-- Content for Sell Stocks tab -->
+<form action="process_purchase.php" method="post">
+      <label for="trade-type">Select Trade Type:</label>
+      <select id="trade-type" name="trade-type">
+        <option value="intraday">Intraday</option>
+        <option value="delivery">Delivery</option>
+      </select>
+
+    <label id="stockSymbolLabel" for="stockSymbol">Stock Symbol:</label>
+    <input type="text" id="stockSymbol" name="stockSymbol" required aria-labelledby="stockSymbolLabel">
+
+    <label id="quantityLabel" for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" required aria-labelledby="quantityLabel">
+
+    <label id="priceLabel" for="price">Price per Share:</label>
+    <input type="text" id="price" name="price" required aria-labelledby="priceLabel">
+
+    <button type="button" onclick="submitForm()">Sell Stocks</button>
+</form>
+</div>
+
+<script>
+  function changeTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    tabContents.forEach(content => {
+      content.setAttribute('hidden', 'true');
+      content.setAttribute('tabindex', '-1');
+    });
+
+    tabs[index].setAttribute('aria-selected', 'true');
+    tabs[index].setAttribute('tabindex', '0');
+
+    tabContents[index].removeAttribute('hidden');
+    tabContents[index].setAttribute('tabindex', '0');
+    tabContents[index].focus();
+  }
+</script>
+</main>
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+<p>Email: marketminds025@.org</p>
+      <p>Phone: +91 9763657350</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Connect With Us</h3>
+      <ul class="social-icons">
+<li> <a href="https://www.facebook.com"><img src="Facebook.jpg" alt="facebook"></a></li>
+<li><a href="https://www.instagram.com"><img src="Instagram.jpg" alt="instagram"></a></li>
+<li><a href="https://www.twitter.com"><img src="X.jpg" alt="Twitter"></a></li>
+      </ul>
+    </div>
+          </div>
+  
+  <div class="copyright">
+    <p>&copy; 2024 MarketMinds All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  // Store the default page title
+  const defaultTitle = document.title;
+
+  function changeTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    tabContents.forEach(content => {
+      content.setAttribute('hidden', 'true');
+      content.setAttribute('tabindex', '-1');
+    });
+
+    tabs[index].setAttribute('aria-selected', 'true');
+    tabs[index].setAttribute('tabindex', '0');
+
+    tabContents[index].removeAttribute('hidden');
+    tabContents[index].setAttribute('tabindex', '0');
+    tabContents[index].focus();
+
+    // Update the page title based on the selected tab
+    document.title = tabs[index].textContent + ' | MarketMinds';
+  }
+</script>
+
+</body>
+</html>

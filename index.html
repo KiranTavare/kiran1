@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<title>Invest in Stocks: Explore Live NSE/BSE on MarketMinds</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+h1, h2 {
+  color: #333;
+}
+/* Style for Tab Panel */
+.tab-panel {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+}
+
+.tab[aria-selected="true"] {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.tab-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Style for Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.info-item {
+  margin-bottom: 10px;
+}
+
+.up {
+  color: green;
+}
+
+.collections {
+  margin-top: 20px;
+}
+
+/* Style for List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.total-returns {
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip To Main Content </a>
+<header>
+    <div class="logo-container">
+<p><i>Market Minds</i></p>
+    </div>
+</header>
+
+<nav>
+<ul>
+<li><a href="Index.html" aria-current="page">Home</a></li>
+<li><a href="Investments.html">Investments</a></li>
+<li><a href="Investments.html#trade">Start Trading </a></li>
+<li>    <a href="Login_SignUp.html#main">Login</a></li>
+<li><p>Don't have an Account!</p></li>
+<li>    <a href="Login_SignUp.html#main">Create Account</a></li>
+</ul>
+</nav>
+
+<main>
+<h1 id="main">Welcome to MarketMinds!</h1>
+<div class="tab-panel" role="tablist" aria-label="Tab Panel">
+  <div class="tab" role="tab" aria-selected="true" tabindex="0" onclick="changeTab(0)">Stocks
+</div>
+  <div class="tab" role="tab" aria-selected="false" tabindex="-1" onclick="changeTab(1)">Mutual Funds</div>
+</div>
+
+<div class="tab-content" role="tabpanel" aria-labelledby="tab1" id="content1" tabindex="0">
+    <!-- Content for Stocks tab -->
+    <h2>Stocks </h2>
+    <input type="text" id="searchInput" placeholder="Search Stock">
+    <button onclick="searchStock()">Search</button>
+</div>
+    <script>
+        function searchStock() {
+            var stockName = document.getElementById('searchInput').value.trim().toLowerCase();
+
+            // Validate if the search field is not empty and the entered stock name is valid
+            if (stockName !== "" && isValidStock(stockName)) {
+                // Redirect to Investments.html with the section ID as a hash fragment
+                window.location.href = 'Investments.html#' + stockName;
+            } else {
+                alert("Please enter a valid stock name before searching.");
+            }
+        }
+
+        // Validation function to check if the entered stock name is valid (case-insensitive)
+        function isValidStock(stockName) {
+            var validStocks = ["zomato", "idfc", "indian hotel"];
+            return validStocks.map(name => name.toLowerCase()).includes(stockName);
+        }
+    </script>
+
+<!-- Tab panel for Index -->
+
+<div id="tabContainer">
+  <div role="tab" tabindex="0" aria-controls="nifty50-panel" aria-selected="true" onclick="showPanel('nifty50-panel')">Nifty 50</div>
+  <div role="tab" tabindex="0" aria-controls="sensex-panel" aria-selected="false" onclick="showPanel('sensex-panel')">Sensex</div>
+  <div role="tab" tabindex="0" aria-controls="banknifty-panel" aria-selected="false" onclick="showPanel('banknifty-panel')">Bank Nifty</div>
+
+  <div id="nifty50-panel" role="tabpanel" aria-labelledby="nifty50-tab" style="display: block;">
+    <!-- Content for Nifty 50 tab -->
+  <h2>Nifty 50 Stocks</h2>
+        <div class="info-item">
+            <strong>Current Value:</strong> <span>22,122.25</span>
+<br>
+            <strong>Change:</strong> <span class="up">+81.55 (0.37%)</span>
+</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Company Name</th>
+        <th>Sector</th>
+        <th>CMP</th>
+        <th>Change (Chg%)</th>
+        <th>Volume</th>
+        <th>Technical Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Adani Enterprises</td>
+        <td>Trading</td>
+        <td>3,258.80</td>
+        <td>35.2 (1.09%)</td>
+        <td>1.78m</td>
+        <td>Very Bullish</td>
+      </tr>
+      <tr>
+        <td>Adani Ports</td>
+        <td>Infrastructure - General</td>
+        <td>1,307.00</td>
+        <td>0.15 (0.01%)</td>
+        <td>2.70m</td>
+        <td>Very Bullish</td>
+      </tr>
+      <tr>
+        <td>Apollo Hospital</td>
+        <td>Hospitals & Medical Services</td>
+        <td>6,657.15</td>
+        <td>56.6 (0.86%)</td>
+        <td>334.61k</td>
+        <td>Very Bullish</td>
+      </tr>
+      <tr>
+        <td>Asian Paints</td>
+        <td>Paints & Varnishes</td>
+        <td>2,998.10</td>
+        <td>9.8 (-0.33%)</td>
+        <td>560.70k</td>
+        <td>Bearish</td>
+      </tr>
+      <tr>
+        <td>Axis Bank</td>
+        <td>Banks - Private Sector</td>
+        <td>1,062.95</td>
+        <td>5.8 (-0.54%)</td>
+        <td>7.56m</td>
+        <td>Neutral</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="sensex-panel" role="tabpanel" aria-labelledby="sensex-tab" style="display: none;">
+    <!-- Content for Sensex tab -->
+<h2> Sensex</h2>
+<div class="info-item">
+            <strong>Current Value:</strong> <span>72,708.1</span>
+<br>
+ <strong>Change:</strong> <span class="up">+281.52 (0.39%)</span>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Company Name</th>
+      <th>Sector</th>
+      <th>Weightage</th>
+      <th>LTP</th>
+      <th>Change</th>
+      <th>Change %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ASIANPAINT</td>
+      <td>Asian Paints</td>
+      <td>Paints/Varnish</td>
+      <td>1.982 %</td>
+      <td>3,007.70</td>
+      <td>-8.00</td>
+      <td>-0.27 %</td>
+    </tr>
+    <tr>
+      <td>AXISBANK</td>
+      <td>Axis Bank</td>
+      <td>Banks</td>
+      <td>2.266 %</td>
+      <td>1,069.25</td>
+      <td>-3.35</td>
+      <td>-0.31 %</td>
+    </tr>
+    <tr>
+      <td>BAJFINANCE</td>
+      <td>Bajaj Finance</td>
+      <td>Finance</td>
+      <td>2.811 %</td>
+      <td>6,621.25</td>
+      <td>1.35</td>
+      <td>0.02 %</td>
+    </tr>
+    <tr>
+      <td>BAJAJFINSV</td>
+      <td>Bajaj Finserv</td>
+      <td>Finance</td>
+      <td>1.727 %</td>
+      <td>1,575.55</td>
+      <td>6.10</td>
+      <td>0.39 %</td>
+    </tr>
+    <tr>
+      <td>BHARTIARTL</td>
+      <td>Bharti Airtel</td>
+      <td>Telecomm-Service</td>
+      <td>4.521 %</td>
+      <td>1,119.85</td>
+      <td>-1.30</td>
+      <td>-0.12 %</td>
+    </tr>
+    <tr>
+      <td>HCLTECH</td>
+      <td>HCL Technologies</td>
+      <td>IT - Software</td>
+      <td>3.109 %</td>
+      <td>1,668.00</td>
+      <td>6.20</td>
+      <td>0.37 %</td>
+    </tr>
+    <tr>
+      <td>HDFCBANK</td>
+      <td>HDFC Bank</td>
+      <td>Banks</td>
+      <td>7.409 %</td>
+      <td>1,419.90</td>
+      <td>6.15</td>
+      <td>0.44 %</td>
+    </tr>
+    <tr>
+      <td>HINDUNILVR</td>
+      <td>Hindustan Unilever</td>
+      <td>FMCG</td>
+      <td>3.833 %</td>
+      <td>2,375.05</td>
+      <td>23.95</td>
+      <td>1.02 %</td>
+    </tr>
+    <tr>
+      <td>ICICIBANK</td>
+      <td>ICICI Bank</td>
+      <td>Banks</td>
+      <td>4.931 %</td>
+      <td>1,022.80</td>
+      <td>5.65</td>
+      <td>0.56 %</td>
+    </tr>
+    <tr>
+      <td>ITC</td>
+      <td>ITC</td>
+      <td>Tobacco Products</td>
+      <td>3.470 %</td>
+      <td>404.75</td>
+      <td>0.75</td>
+      <td>0.19 %</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <div id="banknifty-panel" role="tabpanel" aria-labelledby="banknifty-tab" style="display: none;">
+    <!-- Content for Bank Nifty tab -->
+        <div class="info-item">
+<strong>Current Value:</strong> <span>46,535.50</span>
+<br>
+<strong>Change:</strong> <span class="up">+150.65 (0.32%)</span>
+</div>
+    <table>
+        <tr>
+            <th>COMPANY NAME</th>
+            <th>WEIGHT</th>
+            <th>CMP</th>
+            <th>PRICE CHANGE</th>
+            <th>MARKET CAP (CR)</th>
+            <th>52W HIGH</th>
+            <th>52W LOW</th>
+            <th>ROE</th>
+            <th>P/E</th>
+            <th>P/B</th>
+            <th>EBITDA (CR)</th>
+        </tr>
+        <tr>
+            <td>AXISBANK</td>
+            <td>11.18%</td>
+            <td>1062.95</td>
+            <td>-5.80 (-0.54%)</td>
+            <td>329695.94</td>
+            <td>1151.85</td>
+            <td>814.30</td>
+            <td>7.96</td>
+            <td>14.73</td>
+            <td>2.31</td>
+            <td>23540.89</td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+  function showPanel(panelId) {
+    const panels = document.querySelectorAll('[role="tabpanel"]');
+    panels.forEach(panel => {
+      panel.style.display = 'none';
+    });
+
+    const tabs = document.querySelectorAll('[role="tab"]');
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+    });
+
+    const selectedPanel = document.getElementById(panelId);
+    selectedPanel.style.display = 'block';
+
+    const selectedTab = document.querySelector(`[aria-controls="${panelId}"]`);
+    selectedTab.setAttribute('aria-selected', 'true');
+  }
+</script>
+
+</div>
+
+<div class="tab-content" role="tabpanel" aria-labelledby="tab2" id="content2" hidden>
+<h2>Mutual Funds </h2>
+    <!-- Content for Mutual Funds tab -->
+    <h2>Popular Funds</h2>
+
+    <table>
+        <tr>
+            <th>Fund Name</th>
+            <th>Category</th>
+            <th>Return (3Y)</th>
+        </tr>
+        <tr>
+            <td>Parag Parikh Flexi Cap Fund Direct Growth</td>
+            <td>Flexi Cap</td>
+            <td>23.0%</td>
+        </tr>
+        <tr>
+            <td>Axis Small Cap Fund Direct Growth</td>
+            <td>Small Cap</td>
+            <td>30.0%</td>
+        </tr>
+        <tr>
+            <td>Quant Mid Cap Fund Direct Growth</td>
+            <td>Mid Cap</td>
+            <td>40.2%</td>
+        </tr>
+        <tr>
+            <td>Groww Nifty Total Market Index Fund Direct Growth</td>
+            <td>N.A</td>
+            <td>N.A</td>
+        </tr>
+    </table>
+
+    <div class="collections">
+        <h2>Collections</h2>
+        <ul>
+            <li>High return</li>
+            <li>SIP with ₹500</li>
+            <li>Tax Saving</li>
+            <li>Large Cap</li>
+            <li>Mid Cap</li>
+            <li>Small Cap</li>
+        </ul>
+    </div>
+
+    <div class="total-returns">
+        <h2>Your Investments</h2>
+        <p>Total Returns: ₹4,350</p>
+        <p>Current Investment: +₹300</p>
+    </div>
+</div>
+</div>
+
+<script>
+  function changeTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    tabContents.forEach(content => {
+      content.setAttribute('hidden', 'true');
+      content.setAttribute('tabindex', '-1');
+    });
+
+    tabs[index].setAttribute('aria-selected', 'true');
+    tabs[index].setAttribute('tabindex', '0');
+
+    tabContents[index].removeAttribute('hidden');
+    tabContents[index].setAttribute('tabindex', '0');
+    tabContents[index].focus();
+  }
+</script>
+</main>
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+<p>Email: marketminds025@.org</p>
+      <p>Phone: +91 9763657350</p>
+    </div>
+        
+    <div class="footer-section">
+      <h3>Connect With Us</h3>
+      <ul class="social-icons">
+<li> <a href="https://www.facebook.com"><img src="Facebook.jpg" alt="facebook"></a></li>
+<li><a href="https://www.instagram.com"><img src="Instagram.jpg" alt="instagram"></a></li>
+<li><a href="https://www.twitter.com"><img src="X.jpg" alt="Twitter"></a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="copyright">
+    <p>&copy; 2024 MarketMinds All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  // Store the default page title
+  const defaultTitle = document.title;
+
+  function changeTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    tabContents.forEach(content => {
+      content.setAttribute('hidden', 'true');
+      content.setAttribute('tabindex', '-1');
+    });
+
+    tabs[index].setAttribute('aria-selected', 'true');
+    tabs[index].setAttribute('tabindex', '0');
+
+    tabContents[index].removeAttribute('hidden');
+    tabContents[index].setAttribute('tabindex', '0');
+    tabContents[index].focus();
+
+    // Update the page title based on the selected tab
+    document.title = tabs[index].textContent + ' | MarketMinds';
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<title>Login_SignUp: Explore Live NSE/BSE on MarketMinds</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+/* Style for Tab panel */
+.tab-panel {
+  display: flex;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+/* Style for Form*/
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input,
+select {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+
+<body>
+<a href="#main" class="skip-link">Skip To Main Content </a>
+
+<header>
+    <div class="logo-container">
+<p><i>Market Minds</i></p>
+    </div>
+</header>
+
+<nav>
+<ul>
+<li><a href="Index.html">Home</a></li>
+<li><a href="Investments.html">Investments</a></li>
+<li><a href="Investments.html#trade">Start Trading </a></li>
+<li>    <a href="Login_SignUp.html#main" aria-current="page">Login</a></li>
+<li><p>Don't have an Account!</p></li>
+<li>    <a href="Login_SignUp.html#main" aria-current="page">Create Account</a></li>
+</ul>
+</nav>
+
+<main>
+<h1 id="main">Login/SignUP</h1>
+<div class="tab-panel" role="tablist" aria-label="Tab Panel">
+  <div class="tab" role="tab" aria-selected="true" tabindex="0" onclick="changeTab(0)">Login</div>
+  <div class="tab" role="tab" aria-selected="false" tabindex="-1" onclick="changeTab(1)">Create an Account</div>
+</div>
+
+<div class="tab-content" role="tabpanel" aria-labelledby="tab1" id="content1" tabindex="0">
+<!-- Content for Login Tab -->
+    <h2>Login </h2>
+        <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" id="loginButton">Login</button>
+    </form>
+
+  </div>
+
+<div class="tab-content" role="tabpanel" aria-labelledby="tab2" id="content2" hidden>
+<!-- Content for Create Account tab -->
+<h2>Create an account</h2>
+    <form action="/submit" method="post">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required aria-describedby="name-description">
+    <span id="name-description" class="visually-hidden">Please enter your full name.</span>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required aria-describedby="username-description">
+    <span id="username-description" class="visually-hidden">Choose a unique username.</span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required aria-describedby="email-description">
+    <span id="email-description" class="visually-hidden">Provide a valid email address.</span>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required aria-describedby="password-description">
+    <span id="password-description" class="visually-hidden">Create a secure password.</span>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" required aria-describedby="confirm-password-description">
+    <span id="confirm-password-description" class="visually-hidden">Re-enter your password for confirmation.</span>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required aria-describedby="phone-description">
+    <span id="phone-description" class="visually-hidden">Enter your phone number.</span>
+
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate" required aria-describedby="birthdate-description">
+    <span id="birthdate-description" class="visually-hidden">Select your birthdate.</span>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required aria-describedby="gender-description">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    <span id="gender-description" class="visually-hidden">Select your gender.</span>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required aria-describedby="city-description">
+    <span id="city-description" class="visually-hidden">Enter the city you live in.</span>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required aria-describedby="country-description">
+    <span id="country-description" class="visually-hidden">Enter the country you live in.</span>
+
+    <label for="pan_number">PAN Number:</label>
+    <input type="text" id="pan_number" name="pan_number" required aria-describedby="pan-number-description">
+    <span id="pan-number-description" class="visually-hidden">Enter your PAN number.</span>
+
+    <button type="submit" value="Submit">Create Account</button>
+</form>
+</div>
+
+<script>
+  function changeTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    tabContents.forEach(content => {
+      content.setAttribute('hidden', 'true');
+      content.setAttribute('tabindex', '-1');
+    });
+
+    tabs[index].setAttribute('aria-selected', 'true');
+    tabs[index].setAttribute('tabindex', '0');
+
+    tabContents[index].removeAttribute('hidden');
+    tabContents[index].setAttribute('tabindex', '0');
+    tabContents[index].focus();
+  }
+</script>
+
+<script>
+  // Store the default page title
+  const defaultTitle = document.title;
+
+  function changeTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    });
+
+    tabContents.forEach(content => {
+      content.setAttribute('hidden', 'true');
+      content.setAttribute('tabindex', '-1');
+    });
+
+    tabs[index].setAttribute('aria-selected', 'true');
+    tabs[index].setAttribute('tabindex', '0');
+
+    tabContents[index].removeAttribute('hidden');
+    tabContents[index].setAttribute('tabindex', '0');
+    tabContents[index].focus();
+
+    // Update the page title based on the selected tab
+    document.title = tabs[index].textContent + ' | MarketMinds';
+  }
+</script>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+<p>Email: marketminds025@.org</p>
+      <p>Phone: +91 9763657350</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Connect With Us</h3>
+      <ul class="social-icons">
+<li> <a href="https://www.facebook.com"><img src="Facebook.jpg" alt="facebook"></a></li>
+<li><a href="https://www.instagram.com"><img src="Instagram.jpg" alt="instagram"></a></li>
+<li><a href="https://www.twitter.com"><img src="X.jpg" alt="Twitter"></a></li>
+      </ul>
+    </div>
+          </div>
+  
+  <div class="copyright">
+    <p>&copy; 2024 MarketMinds All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

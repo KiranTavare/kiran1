@@ -1,0 +1,239 @@
+  /* Style for the skip link */
+/* Style the skip link to be visible and attractive */
+.skip-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #2980b9;
+    border-radius: 4px;
+    opacity: 0; /* Hide initially */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Make the skip link visible when focused or hovered */
+.skip-link:focus,
+.skip-link:hover {
+    opacity: 1;
+}
+
+/* Style the skip link when it's in focus */
+.skip-link:focus {
+    top: 0;
+}
+
+/* the link is keyboard accessible */
+.skip-link:not(:focus):not(:active) {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Add a smooth transition effect for a better user experience */
+.skip-link {
+    transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+/* Header */
+header {
+    background-color: yellow;
+    padding: 20px;
+    text-align: center;
+    width: auto;
+}
+
+
+.logo-container {
+    font-family: 'Arial', sans-serif; 
+    font-size: 24px;
+    font-weight: bold;
+color: tomato;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    margin-top: 10px;
+    border: 3px solid #3498db;
+    padding: 10px;
+    display: inline-block;
+width: auto;
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change on hover */
+}
+
+.logo-container:hover {
+    color: #e74c3c;
+}
+
+/* navigation bar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Style the list items */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    margin: 0;
+}
+
+/* Style the links */
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Style the login/signup paragraph */
+nav p {
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Style the "Don't have an Account!" paragraph */
+nav p:nth-child(2) {
+    display: inline; /* Make it inline to be next to the following link */
+}
+
+/* Style the Create Account link */
+nav a:last-child {
+    background-color: #4CAF50; /* Green background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin-top: 5px;
+    }
+
+    nav p {
+        text-align: center;
+    }
+}
+
+/* Footer*/
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+/* Contact Us Section */
+.footer-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #ffcc00; /* Set a contrasting color for headings */
+}
+
+.footer-section p {
+  margin: 8px 0;
+}
+
+/* Connect With Us Section */
+ul.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for each social icon */
+ul.social-icons li {
+  display: inline-block;
+  margin-right: 10px; /* Adjust the spacing between icons */
+}
+
+/* Style for anchor tags within list items */
+ul.social-icons li a {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect to the icons */
+ul.social-icons li a:hover {
+  transform: scale(1.2); /* Adjust the scale factor for the hover effect */
+}
+
+/* Style for the images within the anchor tags */
+ul.social-icons li img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; /* Make the images circular */
+  border: 2px solid #fff; /* Add a white border around the images */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+/* Accessible text for screen readers */
+ul.social-icons li a span {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+}
+/* Copyright Section */
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #ccc; /* Lighter color for copyright text */
+}
+
+/* Accessibility Styles */
+a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
